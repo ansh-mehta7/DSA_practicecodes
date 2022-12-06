@@ -70,7 +70,7 @@
         4 5 6 
         7 8 9 10 
       */
-     /*int n;
+     int n;
      cin >>n ;
      int i = 1 ;
     
@@ -79,24 +79,25 @@
       
       while (i<=n){
         int j = 1;
-        int k=i;
-         while (j<=i)
+        
+         while (j<=n)
          {
-             cout<<k;
+             cout<<i-1+j;
              cout<<" ";
-               ++k;
+               
              
              j++;
          }
          cout<<endl;
           i++;
+          
+          }  
           return 0 ;
            
-          }  
-1              
-2 3 
-3 4 5 
-4 5 6 7 */ 
+// 1              
+// 2 3 
+// 3 4 5 
+// 4 5 6 7 */ 
 
     //   
     //  int n;
@@ -180,30 +181,30 @@
 // F F F F F F F 
 // G G G G G G G 
 
-int n;
-     cin >>n ;
-     int i = 1 ;
+// int n;
+//      cin >>n ;
+//      int i = 1 ;
   
-      while (i<=n){
-        int j = 1;
-        char c ='A'+j-1;
-         while (j<=n)
-         {
+//       while (i<=n){
+//         int j = 1;
+//         char c ='A'+j-1;
+//          while (j<=n)
+//          {
           
-             cout<<c;
-             cout<<" ";
-              c++;
+//              cout<<c;
+//              cout<<" ";
+//               c++;
              
-             j++;
+//              j++;
 
-         }
+//          }
         
-         cout<<endl;
+//          cout<<endl;
          
-          i++;
-      }  
+//           i++;
+//       }  
   
-     return 0;
+//      return 0;
 //      A B C 
 // A B C 
 // A B C 
