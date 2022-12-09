@@ -1,26 +1,53 @@
+/*
+
 #include <iostream>
-using namespace std ;
- 
-int main() {
 
-   int n;
-     cin >> n;
-     int i = 1;
-     for (i = 1; i <= n; i++)
-     {
-         int j =1 ;
-         char start='A'+i+j-2;
-          for(j=1 ; j<=i;j++){
-             
-              cout<<start;
-              start++;
+using namespace std;
+
+int main()
+{
+   int n ;
+    cin >>n ;
+    int i =1 ;
+    
+    while (i<=n){
+         int j = 1 ;
+          while (j<=i){
+               cout<<"*";
+                j++;
           }
+       
+          
+          i++;
+    cout<<endl;
+     
+    }
+    int j =1;
+   
+
+    while (j<=n-1)
+    {
+         int star=n-j;
+         while (star){
+             cout<<"*";
+             star--;
+             
+         }
+         j++;
           cout<<endl;
-
-
-
-  
-}
+          
+    }
 
     return 0;
 }
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+
+*/
