@@ -1,4 +1,4 @@
-/*  
+  
 // find the largest of the three numbers 
 #include<iostream>
 using namespace std ;
@@ -20,7 +20,7 @@ using namespace std ;
     cout<<" max is "<<max ;
 return 0; 
  }
- // fibonacci use 
+
 #include <iostream>
 using namespace std ;
  int main (){
@@ -80,22 +80,6 @@ while (i<n){
          cout<<ans;
          return 2;
     }
-*/
+
   
-    // decimal to binary bits 
-    #include <iostream>
-    #include<math.h>
-    using namespace std ;
-    int main (){
-       int n ;
-       cout<<"enter the number";
-        cin >>n ;
-        int answer=0;
-        int i=0;
-        while (n!=0){
-           int bit=n&1;
-        answer =(pow(10,i)*bit)+answer;
-        n=n>>1;i++;
-        }
-        cout<<answer;
-    }
+    
