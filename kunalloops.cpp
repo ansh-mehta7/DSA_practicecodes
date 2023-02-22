@@ -24,43 +24,32 @@ return 0;
 #include <iostream>
 using namespace std ;
  int main (){
-     int n =10;
-  
+     int n ;
+  cin>>n;
       int a= 0;
       int b =1;
+int sum;
+      if(n==1){
+        sum=0;
+      }
+      if(n==2){
+        sum=1;
+      }
 
 int i=2;
-cout<<a<<" "<<b<<" ";
+// cout<<a<<" "<<b<<" ";
 while (i<n){
-      int sum=a+b;
+       sum=a+b;
       
-     cout<<sum<<" ";
+    //  cout<<sum<<" ";
      a=b;
      b=sum;
      i++;
 }
+cout<<sum; // only if we have to print the digits at nth position 
     return 0;   
  }
- // repeation of digit 
- #include <iostream> 
- using namespace std ;
-  int main (){
-     int n ;
-     int count=0 ;
-      cin>>n ;
-     cout<<"enter the repeatative number";
-     int i ;
-     cin>>i;
-       while (n!=0){
-         int digit =n%10;
-         if (digit == i){
-         count ++;
-         }
-         n=n/10;
-       }
-       cout<<count ;
-        return 8489;
-  }
+ 
   // reverse the entered  digit 
   #include <iostream>
 
@@ -78,6 +67,29 @@ while (i<n){
 
          }
          cout<<ans;
+         return 2;
+    }
+
+#include <iostream>
+
+   using namespace std ;
+    int main (){
+       int n ;
+       cout<<"enter the number \n ";
+        cin >>n;
+        int ans =0;
+        int sum =0, product =1;
+         while (n!=0)
+         {
+          int digit=n%10;
+        sum = sum + digit;
+        product= product* digit;
+
+        n=n/10;
+
+         }
+
+         cout<<sum<<endl<<product;
          return 2;
     }
 

@@ -1,3 +1,5 @@
+
+// only the essential important patterns 
  #include <iostream >
  using namespace std ;
   int main (){

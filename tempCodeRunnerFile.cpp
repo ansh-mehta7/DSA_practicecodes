@@ -1,25 +1,29 @@
- #include <iostream >
- using namespace std ;
-  int main (){
+#include <iostream>
+using namespace std ;
+ int main (){
      int n ;
-      cin >>n ;
-      for(int i=1;i<=2*n-1;i++){
-        
-        int space =i<=n ?n-i:i-n ;
-        for ( int k =1 ;k<=space ;k++){
-             cout<<" ";
-        }
-        int noofcols= i<=n?i:2*n-i;
-         for ( int j=noofcols;j >=1;j--){
-            cout<<j;
-         }
-
-         int z= i<=n?z=i:z=2*n-i;
-         for (  int k=2;k<=z ;k++){
-             cout<<k;
-
-         }
-         cout<<"\n";
+  cin>>n;
+      int a= 0;
+      int b =1;
+int sum;
+      if(n==1){
+        sum=0;
       }
-return 0;
-  }  
+      if(n==2){
+        sum=1;
+      }
+
+int i=2;
+// cout<<a<<" "<<b<<" ";
+while (i<n){
+       sum=a+b;
+      
+    //  cout<<sum<<" ";
+     a=b;
+     b=sum;
+     i++;
+}
+cout<<sum; // only if we have to print the digits at nth position 
+    return 0;   
+ }
+ 
