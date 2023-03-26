@@ -1,29 +1,34 @@
 #include <iostream>
-using namespace std ;
- int main (){
-     int n ;
-  cin>>n;
-      int a= 0;
-      int b =1;
-int sum;
-      if(n==1){
-        sum=0;
-      }
-      if(n==2){
-        sum=1;
-      }
+#include<vector>
+#include<math.h>
+using namespace std;
+int main () {
+  int n ;
+   cin>>n;
 
-int i=2;
-// cout<<a<<" "<<b<<" ";
-while (i<n){
-       sum=a+b;
-      
-    //  cout<<sum<<" ";
-     a=b;
-     b=sum;
-     i++;
-}
-cout<<sum; // only if we have to print the digits at nth position 
-    return 0;   
+   vector <int> v(n);
+   int i=0;
+   for (i; i < n; i++)
+   {
+     cin>>v[i];
+
+   }
+   int findquerry[100000]={0};
+ for (int k=0;k<n;k++){
+  findquerry[v[k]]=1;
  }
- 
+ cout<<"enter the number of  queries ";
+ int q;
+cin>>q;
+while(q--){
+   int queryelemnt;
+    cin>>queryelemnt;
+    cout<<findquerry[queryelemnt]<<endl;
+    
+}
+
+   
+return 0;
+  }
+
+    
