@@ -13,10 +13,8 @@
      int end=size-1;
    while(start<=end){
  // c=a a=b b=c
- int c=arr[start];
- arr[start]=arr[end];
- arr[end]=c;
-    // swap(arr[start],arr[end]);
+ 
+    swap(arr[start],arr[end]);
     start++;
     end--;
 

@@ -1,34 +1,36 @@
 #include <iostream>
-#include<vector>
-#include<math.h>
+#include <vector>
+#include<bits/stdc++.h>
+#include <math.h>
+
 using namespace std;
-int main () {
-  int n ;
-   cin>>n;
 
-   vector <int> v(n);
-   int i=0;
-   for (i; i < n; i++)
-   {
-     cin>>v[i];
-
-   }
-   int findquerry[100000]={0};
- for (int k=0;k<n;k++){
-  findquerry[v[k]]=1;
- }
- cout<<"enter the number of  queries ";
- int q;
-cin>>q;
-while(q--){
-   int queryelemnt;
-    cin>>queryelemnt;
-    cout<<findquerry[queryelemnt]<<endl;
-    
+void returnsquares(vector<int>& v) {
+    vector<int> ans;
+    int leftptr = 0;
+    int rightptr = v.size() - 1;
+    while (leftptr <= rightptr) {
+        if (abs(v[leftptr]) < abs(v[rightptr])) {
+            ans.push_back(v[rightptr] * v[rightptr]);
+            rightptr--;
+        } else {
+            ans.push_back(v[leftptr] * v[leftptr]);
+            leftptr++;
+        }
+    }
+    reverse(ans.begin(),ans.end());
+    for (int i = 0; i < ans.size(); i++) {
+        cout << ans[i] << "\t";
+    }
 }
 
-   
-return 0;
-  }
-
-    
+int main() {
+    int n;
+    cin >> n;
+    vector<int> mehta(n);
+    for (int i = 0; i < mehta.size(); i++) {
+        cin >> mehta[i];
+    }
+    returnsquares(mehta);
+    return 0;
+}

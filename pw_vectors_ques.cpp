@@ -147,14 +147,14 @@ int newarray[100];
         v.push_back(3);
         v.push_back(4);
         v.push_back(5);
-        v.push_back(6);
+       
 
         int k;
         cin>>k;
         k=k%v.size();
        
         reverse(v.begin(),v.end());
-        reverse(v.begin(),v.begin()+k);
+        reverse(v.begin(),v.begin()+k-1);
         reverse(v.begin()+k,v.end());
         for(int i=0;i<v.size();i++){
           cout<<v[i]<<"\t";
@@ -164,9 +164,9 @@ int newarray[100];
 
       return 0;
         }
-//  5 4 3 2 1
-//
-// given q queries u need to find if the element is ptresentr in the array or not  
+
+// given q queries u need to find if the element is ptresentr in the array or not 
+
 #include <iostream>
 #include<vector>
 #include<math.h>
@@ -199,5 +199,7 @@ while(q--){
    
 return 0;
   }
+
+
 
     
