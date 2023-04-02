@@ -121,6 +121,7 @@ while (leftptr<rightptr){
 
         }
         evenoddvectors(sample);
+        
 
         for (int i=0;i<n;i++){
           cout<<sample[i]<<"\t";
