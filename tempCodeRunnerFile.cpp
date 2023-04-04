@@ -1,36 +1,34 @@
-#include <iostream>
-#include <vector>
-#include<bits/stdc++.h>
-#include <math.h>
+ #include <iostream>
+  
+  using namespace std;
+  #include<vector>
+    void answerqueries(vector<int>&v){
+   int l ;
+   int r;
+    cin>>l>>r;
+    int sum=0;
+    // 2 4 4 5 6 
+    // l=2 r=5 
+    for (int i=l-1;i<r;i++){
+sum=sum+v[i];
 
-using namespace std;
+    }
+cout<<sum<< " is "<<endl;
 
-void returnsquares(vector<int>& v) {
-    vector<int> ans;
-    int leftptr = 0;
-    int rightptr = v.size() - 1;
-    while (leftptr <= rightptr) {
-        if (abs(v[leftptr]) < abs(v[rightptr])) {
-            ans.push_back(v[rightptr] * v[rightptr]);
-            rightptr--;
-        } else {
-            ans.push_back(v[leftptr] * v[leftptr]);
-            leftptr++;
-        }
     }
-    reverse(ans.begin(),ans.end());
-    for (int i = 0; i < ans.size(); i++) {
-        cout << ans[i] << "\t";
-    }
+  int main () {
+     int n ;
+      cin>>n ;
+       vector<int> sample(n);
+       for (int i=0;i<sample.size();i++){
+         cin>>sample[i];
+       }
+        cout<<"enter the no of queries \n";
+        int q;
+        cin>>q;
+while(q--)
+{
+ answerqueries(sample);
 }
-
-int main() {
-    int n;
-    cin >> n;
-    vector<int> mehta(n);
-    for (int i = 0; i < mehta.size(); i++) {
-        cin >> mehta[i];
+  return 0;
     }
-    returnsquares(mehta);
-    return 0;
-}
