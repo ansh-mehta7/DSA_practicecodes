@@ -1,34 +1,17 @@
- #include <iostream>
-  
-  using namespace std;
-  #include<vector>
-    void answerqueries(vector<int>&v){
-   int l ;
-   int r;
-    cin>>l>>r;
-    int sum=0;
-    // 2 4 4 5 6 
-    // l=2 r=5 
-    for (int i=l-1;i<r;i++){
-sum=sum+v[i];
-
+#include <iostream>
+#include<limits.h>
+using namespace std;
+int main () {
+    int array []={3,4,1,7,6,2,5,2,0,3,4};
+    int target=7;
+    for (int i =0; i<11;i++){
+         for (int k=i+1;k<11;k++){
+             if(array[i]+array[k]==target){
+                cout<<array[i]<<"\t"<<array[k]<<endl;
+         array[i]=array[k]=INT_MIN;
+         break;
+             }
+         }
     }
-cout<<sum<< " is "<<endl;
-
-    }
-  int main () {
-     int n ;
-      cin>>n ;
-       vector<int> sample(n);
-       for (int i=0;i<sample.size();i++){
-         cin>>sample[i];
-       }
-        cout<<"enter the no of queries \n";
-        int q;
-        cin>>q;
-while(q--)
-{
- answerqueries(sample);
-}
-  return 0;
-    }
+return 0;
+  }
