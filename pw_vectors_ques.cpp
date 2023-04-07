@@ -2,13 +2,13 @@
 #include<limits.h>
 using namespace std;
 int main () {
-    int array []={3,4,1,7,6,2,5,2,0,3,4};
+    int array []={3,4,1,7,6,2,5,0};
     int target=7;
-    for (int i =0; i<11;i++){
-         for (int k=i+1;k<11;k++){
+    for (int i =0; i<8;i++){
+         for (int k=i+1;k<8;k++){
              if(array[i]+array[k]==target){
                 cout<<array[i]<<"\t"<<array[k]<<endl;
-         array[i]=array[k]=INT_MIN;
+        //  array[i]=array[k]=INT_MIN;
          break;
              }
          }
@@ -20,16 +20,16 @@ return 0;
 #include<limits.h>
 using namespace std;
 int main () {
-    int array []={2,4,7,8,10,9,7,11,12,6,19,-1,1};
+    int array []={2,4,7,8,10,9,11,12,6,19,-1,1};
     int target=18;
 
-    for (int i =0; i<13;i++){
-         for (int z=i+1;z<13;z++){
-            for (int k=i+2;k<13;k++){
+    for (int i =0; i<12;i++){
+         for (int z=i+1;z<12;z++){
+            for (int k=z+1;k<12;k++){
              if(array[i]+array[k]+array[z]==target){
                 
                 cout<<array[i]<<"\t"<<array[z]<<"\t"<<array[k]<<endl;
-        //  array[z]=array[i]=array[k]=INT_MIN;
+          // array[z]=array[i]=array[k]=INT_MIN;
              }
          }
          }
