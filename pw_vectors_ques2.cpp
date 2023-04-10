@@ -46,7 +46,7 @@ return 0;
   void twopointerapproach (vector <int>&v){
 int leftptr=0;
 int rightptr=v.size()-1;
-while(leftptr<rightptr){
+while(leftptr<=rightptr){
   
   if (v[leftptr]==1&&v[rightptr]==0){
     swap(v[leftptr++],v[rightptr--]);
