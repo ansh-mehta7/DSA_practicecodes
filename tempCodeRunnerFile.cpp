@@ -1,39 +1,38 @@
-#include <iostream>
+ #include <iostream>
   #include<vector>
+  #include<algorithm>
   using namespace std;
-  void twopointerapproach (vector <int>&v){
-int leftptr=0;
-int rightptr=v.size()-1;
-while(leftptr<=rightptr){
-  
-  if (v[leftptr]==1&&v[rightptr]==0){
-    swap(v[leftptr++],v[rightptr--]);
+    void rotate_array(vector<vector<int > > &v){
+        for (int i =0;i<v.size();i++){
+            for (int j=0;j<i;j++){
+         swap(v[i][j],v[j][i]);
 
-  } 
-        else if (v[leftptr]==0){
-    leftptr++;
- 
-  }
-   else  {
-    rightptr--;
-}
+            }
+        }
+for (int i=0;i<v.size();i++){
+reverse (v[i].begin(),v[i].end());
 
 }
+return ;
   }
   int main () {
-    int n ;
+    int n;
      cin>>n ;
-      vector<int>v;
-      for (int i=0;i<n;i++){
-       int element;
-       cin>>element;
-       v.push_back(element);
-      }
-      twopointerapproach(v);
-      for(int i=0;i<v.size();i++){
-        cout<<v[i]<<" ";
-
-      }
-
-  return 0;
+     vector <vector<int>> problem(n,vector<int>(n));
+     for (int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            cin>>problem[i][j];
+         
+        }
     }
+ rotate_array(problem); 
+for (int i=0;i<n;i++){
+        for (int j=0;j<n;j++){
+            cout<<problem[i][j];
+         
+        }
+        cout<<endl;
+
+     }
+  return 0;
+  } 

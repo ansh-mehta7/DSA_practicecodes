@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include<limits.h>
 using namespace std;
@@ -35,8 +36,40 @@ int main () {
          }
     }
 return 0;
+  }// second largest in an array 
+#include <iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int secondlargest(int a[], int n ){
+    int maxelement=INT_MIN;
+    int max_secondelement=INT_MIN;
+    for (int i=0;i<n;i++){
+ if (a[i]>maxelement){
+    maxelement=a[i];
+
+ }
+ 
+    }
+    for (int i=0;i<n;i++){
+        if (a[i]>max_secondelement && a[i]!=maxelement){
+            max_secondelement=a[i];
+
+        }
+    }
+
+    // cout<<maxelement;
+    return max_secondelement;
+}
+int main () {
+    int a[]={1,2,3,10,11,24,56,14,9,12};
+ cout<<secondlargest(a,10);
+
+
+return 0;
   }
   //  second largest element 
+  
+  /*
   #include <iostream>
   #include<limits.h>
   using namespace std;
@@ -72,40 +105,8 @@ return 0;
   return 0;
     }
     //  {2,4,8,9,5,6,1,-1,3,10};
-    
-  #include <iostream>
-  #include<limits.h>
-  using namespace std;
-  int secondlargestelement (int a[] , int size)
-  {
-    int firstlargestvalue=INT16_MIN;
-    int secondlargestvalue=INT16_MIN;
-   
-    for (int i=0;i<size;i++){
-        if(a[i]>firstlargestvalue){
-            firstlargestvalue=a[i];
-
-        }
-    }
-    for (int i=0;i<size;i++){
-        if(a[i]>secondlargestvalue && a[i]!=firstlargestvalue){
-            secondlargestvalue=a[i];
-
-        }
-    }
-    cout<<secondlargestvalue;
-
-    return secondlargestvalue;
-
-  }
   
-  int main () {
-  int sample[]={2,4,8,8,5,5,5,6,1,10,3,10};
-  secondlargestelement(sample ,12);
-  return 0;
-    }
-    
-
+  */
 
     // ROTATION OF ARRAY BY Kth POSITION 
     #include <iostream>
@@ -113,7 +114,7 @@ return 0;
     int roatatearray(int a[], int k, int n){
       k=k%n;
 
-int newarray[100];
+int newarray[7];
  for (int i =0, j=n-k;i<k;i++,j++){
   newarray[i]=a[j];
   
@@ -138,9 +139,9 @@ int newarray[100];
       }
 
       #include <iostream>
-      #include<vector>
-      #include <bits/stdc++.h>
+      
       using namespace std;
+      #include <bits/stdc++.h>
       int main () {
         vector<int>v;
         v.push_back(1);
@@ -149,18 +150,26 @@ int newarray[100];
         v.push_back(4);
         v.push_back(5);
        
-
+ // 1 2 3 4 5 
         int k;
         cin>>k;
         k=k%v.size();
-       
         reverse(v.begin(),v.end());
-        reverse(v.begin(),v.begin()+k-1);
-        reverse(v.begin()+k,v.end());
         for(int i=0;i<v.size();i++){
           cout<<v[i]<<"\t";
 
-        }
+         }cout<<endl;
+         // 5 4 3 2 1 
+        reverse(v.begin(),v.begin()+k);
+        for(int i=0;i<v.size();i++){
+          cout<<v[i]<<"\t";
+
+        }cout<<endl;
+         // 4 5 3 2 1 
+        reverse(v.begin()+k,v.end());
+        for(int i=0;i<v.size(); i++) {cout<<v[i]<<"\t";
+
+        } // 4 5 1 2 3 
         
 
       return 0;
@@ -183,9 +192,9 @@ int main () {
      cin>>v[i];
 
    }
-   int findquerry[100000]={0};
+   int findquerry[n]={0};
  for (int k=0;k<n;k++){
-  findquerry[v[k]]++;
+  findquerry[v[k]]=1; // 0 ki jagah 1 ho jaega 
  }
  cout<<"enter the number of  queries ";
  int q;
@@ -199,8 +208,4 @@ while(q--){
 
    
 return 0;
-  }
-
-
-
-    
+  }  

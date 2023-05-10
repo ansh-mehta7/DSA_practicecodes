@@ -1,4 +1,5 @@
-// sorting zeroes and ones 
+// two pointers approach  questions 
+// sorting zeroes and ones  
 #include <iostream>
 #include<vector>
 using namespace std;
@@ -59,7 +60,6 @@ while(leftptr<=rightptr){
    else  {
     rightptr--;
 }
-
 }
   }
   int main () {
@@ -81,7 +81,7 @@ while(leftptr<=rightptr){
     }
 
 ////////////////////////////////////////////////////////////////////////////
-
+/*move all the even integers at the end of the array followed by the odd integers */  
  #include <iostream>
     #include<vector>
     using namespace std;
@@ -130,7 +130,6 @@ while (leftptr<rightptr){
         }
     return 0;
       }
-
       // -10 -3  4  5  6  
       // 100  9  16  25  36 
      #include <iostream>
