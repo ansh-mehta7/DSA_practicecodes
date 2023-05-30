@@ -1,48 +1,70 @@
-#include <iostream>
-#include<vector>
+#include <bits/stdc++.h> 
+
 using namespace std;
-int selectedrow (vector<vector<int>>&v){
-    int global_i_index=-1;
-    int global_1_count=-1;
-    int coloumn=v[0].size();
-    for (int i=0;i<v.size();i++){
-    for(int j=0;j<coloumn;j++){
-        if (v[i][j]==1){
-            int local_1_count=coloumn-j;
-if (local_1_count>global_1_count){
-    global_1_count=local_1_count;
-    global_i_index=i;
 
-}
+int firstoccurence(vector<int>& arr, int n, int key) {
+    int start = 0;
+    int end = n - 1;
+    int ans = -1;
+
+    while (start <= end) {
+        int mid = start + (end - start) / 2;
+
+        if (arr[mid] == key) {
+            ans = mid;
+            end = mid - 1;
         }
-       
-    }}
-    return global_i_index;
-}
-int leftmostomne(vector<vector<int>>&v){
-    int selectedrow=-1;
-    int pointer =-1;
-    int j=v[0].size()-1;
-  for (int i=0;i<v.size();i++){
-    while (j>=0&&v[i][j]==1){
-        pointer=j;
-        selectedrow=i;
-        j--;
+        else if (arr[mid] > key) {
+            end = mid - 1;
+        }
+        else {
+            start = mid + 1;
+        }
     }
-  }
-return selectedrow;
-}
-int main () {
-    int n ,m;
-     cin >>n>>m;
-vector <vector<int>>vec(n,vector<int>(m));
- for (int i=0;i<n;i++){
-        for (int j=0;j<m;j++){
-            cin>>vec[i][j];
 
+    return ans;
+}
+
+int rightoccurence(vector<int>& arr, int n, int key) {
+    int start = 0;
+    int end = n - 1;
+    int ans = -1;
+
+    while (start <= end) {
+        int mid = start + (end - start) / 2;
+
+        if (arr[mid] == key) {
+            ans = mid;
+            start = mid + 1;
         }
-      }
-      int  res=leftmostomne(vec);
-      cout<<res;
-return 0;
-  }
+        else if (arr[mid] > key) {
+            end = mid - 1;
+        }
+        else {
+            start = mid + 1;
+        }
+    }
+
+    return ans; 
+}
+
+pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int key) {
+    pair<int, int> p;
+
+    p.first = firstoccurence(arr, n, key);
+    p.second = rightoccurence(arr, n, key);
+
+    return p;
+}
+
+int main() {
+    // Example usage
+    vector<int> arr = {1, 2, 2, 3, 3, 3, 4, 4, 5};
+    int key = 3;
+
+    pair<int, int> result = firstAndLastPosition(arr, arr.size(), key);
+    cout << "First occurrence: " << result.first << endl;
+    cout << "Last occurrence: " << result.second << endl;
+
+    return 0;
+}
