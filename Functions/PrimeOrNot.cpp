@@ -1,9 +1,10 @@
 
 #include <iostream>
+#include<cmath>
 using namespace std;
 bool checkPrime(int n)
 {
-  for (int i=2;i<=n-1;i++){
+  for (int i=2;i<sqrt(n);i++){
     if (n%i==0){
         return false ;
     }
@@ -22,6 +23,6 @@ cin>>num;
     } else {
         cout << "not prime" << endl;
     }
-
+ 
     return 0;
 }

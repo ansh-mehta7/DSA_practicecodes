@@ -1,16 +1,28 @@
+
 #include <iostream>
+#include<cmath>
 using namespace std;
-void printAllPrime(int n){
-   for (int i=2;i<=n-1;i++){
-    if (n%i!=0){
-        cout<<i<<endl;
+bool checkPrime(int n)
+{
+  for (int i=2;i<=sqrt(n);i++){
+    if (n%i==0){
+        return false ;
     }
-    else continue;
-   }
-}
-int main () {
-    int num;
-    cin>>num;
-    printAllPrime(num);
-return 0;
   }
+return true;
+}
+
+
+int main()
+{  
+int num;
+cin>>num;
+
+  for (int j=2;j<=num;j++){
+    
+    if (checkPrime(j)){
+      cout<<j<<" ";
+    }
+  }
+    return 0;
+}
