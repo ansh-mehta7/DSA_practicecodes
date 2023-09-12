@@ -14,11 +14,10 @@ int BinaryToDecimal(int n ){
     return decimal;
 }
 
-
-
 int main (){ 
   int n;
    cin>>n;
    cout<<BinaryToDecimal(n);
    return 0;
 }
+

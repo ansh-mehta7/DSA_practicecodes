@@ -18,7 +18,7 @@
 int d=-100;
 cout<<(d>>1)<<endl;
 
-
+// unsigned me garbage value but no error
  unsigned int e=-100;
 cout<<(e>>1)<<endl;
 
