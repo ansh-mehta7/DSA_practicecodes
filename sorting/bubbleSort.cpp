@@ -3,8 +3,8 @@
 using namespace std;
 void bubbleSortAsc(vector<int> &v){
     // outer loop
-    for (int i=0;i<v.size();i++){
    int n=v.size();
+    for (int i=0;i<n-1;i++){
     // inner loop
         for (int j=0;j<n-i-1;j++){
             if (v[j]>v[j+1]){
@@ -30,7 +30,7 @@ void bubbleSortDesc(vector<int> &v){
 
 }
 int main () {
-    vector <int > v={-1,50,3,-8,47,6};
+    vector <int > v={10,20,30,40,50,60};
     int n=6;
     bubbleSortAsc(v);
     for (int i: v){
