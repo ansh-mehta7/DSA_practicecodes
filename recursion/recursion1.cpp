@@ -50,10 +50,11 @@ return 0;
             return 1;
         }
         int ans= 2*pow(n-1);
+        return ans;
 
     }
     int main () {
-        cout<<pow(10);
+        cout<<pow(2);
 
     return 0;
       }
