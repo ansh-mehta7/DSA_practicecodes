@@ -37,7 +37,7 @@ int main () {
    int n=1;
    cout<< myPow(s,n);
 return 0;
-  }
+  } 
 
 
 #include <iostream>
