@@ -35,9 +35,9 @@ int main () {
     int size=5;
     int index=0;
     int mini=INT_MAX;
-    // printArray(arr,size,index);
+    printArray(arr,size,index);
     cout<<endl<<searchArray(arr,5,0,4)<<endl;
-    // minimum(arr,5,0,mini);
-    // cout<<"the min element is "<<mini;
+    minimum(arr,5,0,mini);
+    cout<<"the min element is "<<mini;
 return 0;
   }

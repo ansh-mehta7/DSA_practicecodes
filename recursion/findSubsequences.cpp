@@ -32,7 +32,22 @@
   return 0;
     }
 
+<<<<<<< HEAD
     
+=======
+    #include <iostream>
+    #include <algorithm>
+    #include <vector>
+    using namespace std;
+    int main () {
+      
+    return 0;
+      }
+
+
+
+      
+>>>>>>> 5d0be64 (recursion)
 #include <iostream>
   #include<string>
   #include <algorithm>
