@@ -1,20 +1,29 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include<string>
 using namespace std;
-double myPow(double x, int n) {
+void subs (string input ,string output , int index ){
 
-       int p = abs(n);
-       double ans = 1.0;
-       while(p>=1){
-         p-- ;
-          ans *= x;
-       }
-       return n<0 ? 1/ans :ans ;    
-    }
+// base cse 
+if (index >= input.length()){
+   cout<<output<<endl;
+   return ;
+
+}
+ subs (input,output,index+1);
+ char ch=input[index];
+ output.push_back(ch);
+ subs(input,output,index+1);
+
+// rec call 
+
+}
 int main () {
-   double s=5.2321;
-   int n=1;
-   cout<< myPow(s,n);
+   string input ="abc";
+    string output ="";
+     int index =0;
+      subs(input,output,index);
+
 return 0;
   }

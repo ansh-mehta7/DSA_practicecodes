@@ -10,7 +10,7 @@
     ans.push_back(output);
     return;
   }
-  int ch=input[index];
+  char ch=input[index];
   // ya to isko me exclude karunga ya fir include karunga 
   // exclude 
    findSubsequences(input,output,index+1,ans);
@@ -33,6 +33,7 @@
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
     #include <iostream>
@@ -43,6 +44,8 @@
       
     return 0;
       }
+=======
+>>>>>>> aedb32e (recursion)
 
 
 
