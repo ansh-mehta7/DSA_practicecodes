@@ -13,7 +13,6 @@ void insertionSort(vector <int >&v){
         }
         v[j+1]=key;
     }
-
 }
 int main () {
        vector <int > v={1,-5,9,177,32,-18};
