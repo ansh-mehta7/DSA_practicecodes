@@ -7,7 +7,7 @@ int secondLargest(int arr[],int n){
     
     int max=INT_MIN;
     int secondMax=-1;
-    for (int i=1;i<n;i++){
+    for (int i=0;i<n;i++){
         if (arr[i]>max){
             secondMax=max;
             max=arr[i];
@@ -19,7 +19,7 @@ int secondLargest(int arr[],int n){
 return secondMax;
 }
 int main () {
-    int arr[6]={1,4,7,7,5,6};
+    int arr[6]={1,4,7,9,5,6};
     int size =6;
     cout<<secondLargest(arr,size);
 return 0;

@@ -1,15 +1,21 @@
 #include <iostream>
-  using namespace std;
-  void solve (int arr[],int size){
-    arr[0]=100;
+#include <algorithm>
+#include <vector>
+using namespace std;
+void  fibonnaci (int n){
+  
+  int first =0;
+  int second=1;
+  cout<<first<<" "<<second<<" ";
+  for (int i=2;i<=n;i++){
+     int sum=first+ second;
+     first=second;
+     second=sum;
+     cout<<sum<<" ";
 
   }
-  int main () {
-    int arr[]={1,2,4};
-    int size=3;
-    solve (arr,3);
-    for (int i=0;i<size;i++){
-        cout<<arr[i]<<endl;
-    }
-  return 0;
-    }
+}
+int main () {
+  fibonnaci(8);
+return 0;
+  }

@@ -42,7 +42,8 @@ else {
   
   cout<<" not matching"<<endl;
 }
-cout<<str2.substr(1,8);
+cout<<" "<<str2.back()<<endl;
+cout<<str2.substr(1,1);
 return 0;
   }
   // #include <iostream>

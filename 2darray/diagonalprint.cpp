@@ -18,6 +18,21 @@ for (int i=0;i<row;i++)
     
 }
 }
+void waveprint(int arr[][3],int row,int col){
+    for (int i=0;i<row;i++){
+        if(i%2==0){
+            for (int j=0;j<col;j++){
+                 cout<<arr[j][i]<<" ";
+        }
+        }
+        else {
+            for (int j=col-1;j>=0;j--){
+                cout<<arr[j][i]<<" ";
+            }
+        }
+        
+    }
+}
 int main () {
     int arr[][3]={
 
@@ -26,8 +41,9 @@ int main () {
         {7,8,9}
     };
 int row =3;
-int col=4;
-printArrayDiagonal(arr,row,col);
+int col=3;
+// printArrayDiagonal(arr,row,col);
+waveprint(arr,row,col);
 
 return 0;
   }

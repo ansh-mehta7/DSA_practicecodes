@@ -1,29 +1,44 @@
+
 #include <iostream>
-#include <algorithm>
-#include <vector>
-#include<string>
+#include<limits.h>
+#include<vector>
 using namespace std;
-void subs (string input ,string output , int index ){
+void formNumber(vector<int>&nums,int index,int &ans){
+   // base case 
+   if (index>=nums.size()){
+    return;
+   }
 
-// base cse 
-if (index >= input.length()){
-   cout<<output<<endl;
-   return ;
+   int digit=nums[index];
+   ans=(ans*10)+digit;
 
-}
- subs (input,output,index+1);
- char ch=input[index];
- output.push_back(ch);
- subs(input,output,index+1);
-
-// rec call 
+   formNumber(nums,index+1,ans);
 
 }
 int main () {
-   string input ="abc";
-    string output ="";
-     int index =0;
-      subs(input,output,index);
+     
+     vector<int>nums={4,1,7};
+     int ans=0;
+     formNumber(nums,0,ans);
+     cout<<ans;
 
+
+
+    // int n=4217;
+    // vector<int>ans;
+    // printdigit(n);
+    // for (auto i:ans){
+    //     cout<<i<<endl;
+    // }
+
+
+    // int arr[]={1,2,3,4,5};
+    // int size=5;
+    // int index=0;
+    // int mini=INT_MAX;
+    // printArray(arr,size,index);
+    // cout<<endl<<searchArray(arr,5,0,4)<<endl;
+    // minimum(arr,5,0,mini);
+    // cout<<"the min element is "<<mini;
 return 0;
   }

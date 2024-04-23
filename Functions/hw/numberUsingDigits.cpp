@@ -13,7 +13,7 @@ int  printAllDigits(int n){
 }
 int main () {
    
- cout<<printAllDigits(6);
+ cout<<printAllDigits(2);
 
 return 0;
   }
