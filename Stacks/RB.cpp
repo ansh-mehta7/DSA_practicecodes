@@ -33,7 +33,7 @@ bool checkRedundant(string &str){
     return false;
 }
 int main () {
-    string str="((a+b+c+d))";
+    string str="(((a+B)+c)+d)/l)/z)";
     bool ans =checkRedundant(str);
     if (ans==true){
         cout<<"rb present "<<endl;

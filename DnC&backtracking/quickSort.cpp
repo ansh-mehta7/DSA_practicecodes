@@ -36,7 +36,7 @@ int i=start,j=end;
         swap(arr[i++],arr[j--]);
     }
  }  
-
+cout<<pivotindex<<" ";
 return pivotindex; 
  }
  void QuickSort (int arr[],int start, int end ){
@@ -60,6 +60,7 @@ int arr[]={8,3,5,9,11,32,84,34,11,38,44,20,54,29,2,1};
 int m=16;
 
 QuickSort(arr,0,m-1);
+cout<<endl<<endl;
 for (int i=0; i<m;i++){
 
     cout<<arr[i]<<" ";
