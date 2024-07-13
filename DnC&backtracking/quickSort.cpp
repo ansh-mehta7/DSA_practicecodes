@@ -2,7 +2,7 @@
  #include<vector>
 
  using namespace std;
- int partition (int arr[], int start ,int end ){
+ int partition (vector<int>&arr, int start ,int end ){
 
     int pivotelement =arr[start];
     int pivotindex=start;
@@ -36,10 +36,10 @@ int i=start,j=end;
         swap(arr[i++],arr[j--]);
     }
  }  
-cout<<pivotindex<<" ";
+
 return pivotindex; 
  }
- void QuickSort (int arr[],int start, int end ){
+ void QuickSort (vector<int>&arr,int start, int end ){
 
 // base case 
 if (start>=end){
@@ -56,8 +56,8 @@ QuickSort(arr,p+1,end);
  }
   int main (){
 
-int arr[]={8,3,5,9,11,32,84,34,11,38,44,20,54,29,2,1};
-int m=16;
+vector<int>arr(5000,2);
+int m=arr.size();
 
 QuickSort(arr,0,m-1);
 cout<<endl<<endl;

@@ -8,7 +8,7 @@ void nextsmallest(int arr[], int  n ){
    for(int i=0;i<n;i++){
     for(int j=i+1;j<n;j++){
       if(arr[i]>arr[j]){
-        temp[i]=arr[j];
+        temp[i]=arr[j]; 
         break;
       }
     }
@@ -17,6 +17,18 @@ void nextsmallest(int arr[], int  n ){
     cout<<i<<" "<<endl;
    }
 
+}
+void nextgreater(int arr[],int n,vector <int>&temp){
+  
+  stack<int> st;
+    st.push(-1);
+    for (int i = n - 1; i >= 0; i--) {
+        while (st.top() <= arr[i]) {
+            st.pop();
+        }
+        temp[i] = st.top();
+        st.push(arr[i]);
+    }
 }
 
 vector<int>nextSmallerElement(int arr[],int size,vector <int>&ans){
@@ -36,41 +48,46 @@ vector<int>nextSmallerElement(int arr[],int size,vector <int>&ans){
 int main () {
     int arr[5]={8,4,6,2,3};
     int size=5;
-    vector<int>ans(size);
-    ans=nextSmallerElement(arr,size,ans);
-    for(auto i:ans ){
-        cout<<i<<" ";
-    }
+    cout<<"Next Smallest Element"<<endl;
+    vector<int> temp(size, -1);
+    nextgreater(arr, size, temp);
 
-return 0;
+    // Print the result in the main function
+    cout << "Next Greater Element: ";
+    for (auto i : temp) {
+        cout << i << " ";
+    }
+    cout << endl;
+
+    return 0;
   }
 //  via stack
-  void nextsmallestStack(int arr[], int n ){
-  stack<int>st;
-  st.push(-1);
-  stack<int>temp;
-  int i=n-1;
-  while(i!=-1){
-     if(arr[i]>st.top()){
-      temp.push(st.top());
-      st.push(arr[i]);
+//   void nextsmallestStack(int arr[], int n ){
+//   stack<int>st;
+//   st.push(-1);
+//   stack<int>temp;
+//   int i=n-1;
+//   while(i!=-1){
+//      if(arr[i]>st.top()){
+//       temp.push(st.top());
+//       st.push(arr[i]);
       
-     }
-     else {
-      st.pop();
-      temp.push(st.top());
-      st.push(arr[i]);
-     }
-     i--;
-  }
-  while(!temp.empty()){
-    cout<<temp.top()<<" ";
-    temp.pop();
-  }
-}
-int main() {
-  int arr[]={8,4,6,2,3};
-  nextsmallestStack(arr,5);
+//      }
+//      else {
+//       st.pop();
+//       temp.push(st.top());
+//       st.push(arr[i]);
+//      }
+//      i--;
+//   }
+//   while(!temp.empty()){
+//     cout<<temp.top()<<" ";
+//     temp.pop();
+//   }
+// }
+// int main() {
+//   int arr[]={8,4,6,2,3};
+//   nextsmallestStack(arr,5);
 
-  return 0;
-}
+//   return 0;
+// }
