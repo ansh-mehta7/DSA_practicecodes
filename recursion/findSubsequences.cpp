@@ -17,8 +17,11 @@
 
 
   // include 
+  
   output.push_back(ch);
+ 
    findSubsequences(input,output,index+1,ans);
+   
 
   }
   int main () {
@@ -38,35 +41,35 @@
 
       
 
-#include <iostream>
-  #include<string>
-  #include <algorithm>
-  #include <vector>
-  #include<cmath>
-  using namespace std;
-  void binarySubs( string &s){
-    int n= s.size();
-    int total =pow(2,n);
-  for (int index=0;index<total;index++){
-    // binary 
-    int i= index;
-         int j=0;  // for characters
-    while (i>0){
+// #include <iostream>
+//   #include<string>
+//   #include <algorithm>
+//   #include <vector>
+//   #include<cmath>
+//   using namespace std;
+//   void binarySubs( string &s){
+//     int n= s.size();
+//     int total =pow(2,n);
+//   for (int index=0;index<total;index++){
+//     // binary 
+//     int i= index;
+//          int j=0;  // for characters
+//     while (i>0){
  
-      int bit=i&1;
-      if (bit==1){
-       cout<<s[j]<<" ";
-      }
+//       int bit=i&1;
+//       if (bit==1){
+//        cout<<s[j]<<" ";
+//       }
     
-      i>>=1;
-        j++;
+//       i>>=1;
+//         j++;
 
-    }
-    cout<<endl;
-  }
-  }
-   int main(){
-  string input ="abcd";
-   binarySubs(input);
-   return 0;
-   }
+//     }
+//     cout<<endl;
+//   }
+//   }
+//    int main(){
+//   string input ="abcd";
+//    binarySubs(input);
+//    return 0;
+//    }

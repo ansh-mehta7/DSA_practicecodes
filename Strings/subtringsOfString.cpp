@@ -21,7 +21,7 @@ void allSubstrings(string &str){
 }
 
 int main () {
-    string demo="abc";
+    string demo="abcd";
     allSubstrings(demo);
 return 0;
   }

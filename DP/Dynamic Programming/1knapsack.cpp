@@ -5,12 +5,12 @@ using namespace std;
 int solveUsingRecursion(int capacity, int wt[], int profit[], int index, int n)
 {
     //base case
-    if (index >= n)
-    {
+        if (index >= n)
+        {
 
-        return 0;
-    }
-    int include = 0;
+            return 0;
+        }
+        int include = 0;
     int exclude;
 
     if (wt[index] <= capacity)
@@ -20,6 +20,15 @@ int solveUsingRecursion(int capacity, int wt[], int profit[], int index, int n)
      exclude = 0 + solveUsingRecursion(capacity, wt, profit, index + 1, n);
     int ans = max(include, exclude);
     return ans;
+}
+
+void printdpArray(vector<vector<int>> &dp){
+    for(int i=0;i<dp.size();i++){
+        for (int j=0;j<dp[0].size();j++){
+            cout<<dp[i][j]<<" ";
+        }
+        cout<<endl;
+    }
 }
 
 int solveUsingMem(int capacity, int wt[], int profit[], int index, int n, vector<vector<int>> &dp)
@@ -42,6 +51,10 @@ int solveUsingMem(int capacity, int wt[], int profit[], int index, int n, vector
     }
     int exclude = 0 + solveUsingMem(capacity, wt, profit, index + 1, n, dp);
     dp[capacity][index]= max(include, exclude);
+    printdpArray(dp);
+    cout<<endl;
+    cout<<endl;
+    cout<<endl;
     return dp[capacity][index];
 }
 
@@ -51,7 +64,7 @@ int solveByTabulation(int capacity, int wt[], int profit[], int index, int n)
     for (int i=0;i<=capacity;i++){
         dp[i][n]=0;
 
-    }
+    } 
     for (int i=0;i<=capacity;i++){
         for (int j=n-1;j>=0;j--){
                int include = 0;
@@ -76,16 +89,18 @@ int solveSpaceOptimimstaion(){
 }
 int main()
 {
-    int capacity = 8;
-    int wt[] = {3, 4, 6, 5};
-    int profit[] = {2, 3, 1, 4};
+    
+
+    int capacity = 4;
+    int wt[] = {4,5,1};
+    int profit[] = {1,2,3};
     int index = 0;
-    int n = 4;
+    int n = 3;
     vector<vector<int>> dp(capacity+1,vector<int>(n+1,-1));
 
     // int ans=solveUsingRecursion(capacity,wt,profit,index,n); 
-    // int ans = solveUsingMem(capacity, wt, profit, index, n, dp);
-    int ans = solveByTabulation(capacity, wt, profit, index, n);
+    int ans = solveUsingMem(capacity, wt, profit, index, n, dp);
+    // int ans = solveByTabulation(capacity, wt, profit, index, n);
     cout << "max profit " << ans;
 
     return 0;

@@ -46,7 +46,7 @@ int main () {
     st.push(20);
     st.push(30);
     st.push(40);
-    st.push(50);
+    
     // st.push(60);
     int size=st.size();
     if (st.empty()){

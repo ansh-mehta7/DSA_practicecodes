@@ -81,75 +81,70 @@ void interLeaveQueue(queue<int>&first){
     }
 
 }
-void printFirstNegative(int *arr,int n,int k){
-deque<int>dq;
-// process first k elements of first window 
-for(int i=0;i<k;i++){
-int element =arr[i];
-if(element<0){
-    dq.push_back(i);
-}
-}
-// second step process remaining windows 
+// void printFirstNegative(int *arr,int n,int k){
+// deque<int>dq;
+// // process first k elements of first window 
+// for(int i=0;i<k;i++){
+// int element =arr[i];
+// if(element<0){
+//     dq.push_back(i);
+// }
+// }
+// // second step process remaining windows 
 
-for (int i=k;i<n;i++){
-    // age badne se pehle purani window ka ans nikal lo 
-if(dq.empty()){
-    cout<<"0 ";
-}
-else {
-    cout<<arr[dq.front()]<<" ";
-}
+// for (int i=k;i<n;i++){
+//     // age badne se pehle purani window ka ans nikal lo 
+// if(dq.empty()){
+//     cout<<"0 ";
+// }
+// else {
+//     cout<<arr[dq.front()]<<" ";
+// }
 
-    //removal 
-    // removal  jo bhi index out of range h uske dq me se pop kr do 
-if((i-dq.front())>=k){
-    dq.pop_front();
-}
+//     //removal 
+//     // removal  jo bhi index out of range h uske dq me se pop kr do 
+// if((i-dq.front())>=k){
+//     dq.pop_front();
+// }
 
-//and addition 
-if(arr[i]<0){
-    dq.push_back(i);
-}
- } 
-// last window ka ans alag se print kar lo 
-if(dq.empty()){
-    cout<<"0 "<<endl;
-}
-else {
-    cout<<arr[dq.front()]<<" ";
-}
+// //and addition 
+// if(arr[i]<0){
+//     dq.push_back(i);
+// }
+//  } 
+// // last window ka ans alag se print kar lo 
+// // if(dq.empty()){
+// //     cout<<"0 "<<endl;
+// // }
+// // else {
+// //     cout<<arr[dq.front()]<<" ";
+// // }
    
- }
- int maxofminofwindow(int *arr,int n,int k ){
-    vector<int<ans;
-    deque<int>dq;
-    
- }
+//  }
 
 
 int main () {
-    // queue<int>q;
-    // q.push(2);
-    // q.push(-5);
-    // q.push(4);
-    // q.push(-1);
-    // q.push(-2);
-    // q.push(0);
-    // q.push(5);
-    int arr[]={-8,2,3,-6,10};
-    int size=5;
-     int k=2;
+    queue<int>q;
+    q.push(2);
+    q.push(-5);
+    q.push(4);
+    q.push(-1);
+    q.push(-2);
+    q.push(0);
+    q.push(5);
+    // int arr[]={2,-5,4,-1,-2,0,5};
+    // int size=7;
+    //  int k=3;
     // reverseQueue(q);
-    // reverseRecursion(q);
+    reverseRecursion(q);
     // reverseFirstK(q,4);
     // interLeaveQueue(q);
-    printFirstNegative(arr,size,k);
+    // printFirstNegative(arr,size,k);
 
-    // while(!q.empty()){
-    //     int element=q.front();
-    //     q.pop();
-    //     cout<<element<<" ";
-    // }
+    while(!q.empty()){
+        int element=q.front();
+        q.pop();
+        cout<<element<<" ";
+    }
 return 0;
   }

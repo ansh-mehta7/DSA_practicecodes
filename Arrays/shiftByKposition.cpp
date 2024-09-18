@@ -1,5 +1,5 @@
-// #include <iostream>
-// using namespace std;
+#include <iostream>
+using namespace std;
 // void Rotatetoright(int arr[], int n, int k)
 // {
 //   if (n == 0)
