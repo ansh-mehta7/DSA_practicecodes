@@ -26,11 +26,14 @@ void substring (string &str){
         }
     }
 }
+
 int main () {
-    string str="geeks";
+    string str="abc";
+    string str2="abc";
     int index=0;
 
-    //  printPermutation(str,index);
-     substring(str);
+     printPermutation(str,index);
+     cout<<endl;
+     substring(str2);
 return 0;
   }

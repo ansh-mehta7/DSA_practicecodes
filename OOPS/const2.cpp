@@ -25,7 +25,7 @@ class abc {
  abc (int _x,int _y,int _z =0):x(_x),y(new int (_y)),z(_z) {}
 
      int getX() const
-     {  
+     {  // agar hum chahte h ki hamara memebr variabe kabhi bhi chnage na ho to hum is function ko const bna deneg
 
         return x;
 
@@ -64,6 +64,10 @@ void printabc (const abc &a)
  // a is not  modofiable 
 // a object itself is ocnst means a cant call any fuction 
 // which is not const
+
+// humko guarnatee dena padegiki agar hum const object bna re h to vo unhi methods ko call kr paegi jo guarmetee deri h ki vo modify nhi kregi data ko means ke the function should als be const 
+
+
 {
     cout<<a.getX()<<endl;
     cout<<a.getY()<<endl;

@@ -74,6 +74,11 @@
    // copy ctor by default compiler make copy contructor 
    // but it is good practice to declare copy ctor 
 
+// Here's why:
+// If the copy constructor took the object by value (i.e., Student srcObj), the process of passing srcObj would itself require making a copy of the object.
+// This copy would again invoke the copy constructor, leading to infinite recursion and ultimately a stack overflow.
+// By passing the object by reference (const Student &srcObj), you avoid creating a copy of the object, and no extra calls to the copy constructor are made. The const ensures the original object isn't modified.
+
 Student (const Student &srcObj){
     // const because now the values cant be changed 
     this->name=srcObj.name;
@@ -150,3 +155,27 @@ destructor is called
 
  return 0;
    }
+
+
+   Heap allocation with new allows the object to persist until explicitly deleted using delete. This can be useful when the object's 
+   lifetime needs to extend beyond the scope of the current function or block.
+
+   1 byte is the smallest addressable memeory 
+
+   Object Uniqueness: Even empty objects must have unique memory addresses. If the size were 0, multiple objects would end up having the same address, which is not allowed.
+Memory Alignment: A size of 1 byte ensures that the object can be correctly aligned in memory.
+
+
+cpu is 32 bit arcjhietecture becuase it is 32 bit or 4 byte 
+so at a atime its easy for tit to directly take 4 byte 
+so what it does is it adds padding 
+int 4
+int 4
+bool 1
+class size is 12 although class size required was 9 so it s better to jave 12 byte 
+
+1. sabse bada atataype 
+and uske corrospoinding multiple me chize chalti hai memory me 
+
+
+te of an object by keeping its data members private. Access to and modification of these data members is restricted to the class’s public methods, ensuring controlled and secure data manipulation.

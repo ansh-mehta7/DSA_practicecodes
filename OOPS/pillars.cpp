@@ -4,10 +4,16 @@
 using namespace std;
 class Bird {
     public:
+
     int age ;
-    int weight;
+    public:
     int nol;
     string color;
+
+    protected:
+
+    int weight;
+    public:
     void eat (){
         cout<<"eating "<<endl;
     }
@@ -27,9 +33,9 @@ class Sparrow :private Bird{
         this->nol=nol;
         this->color=color;
      }
-    void grassing(){
-        cout<<" sparrow grassing "<<endl;
 
+    void grassing(){
+        cout<<this->weight<<endl;
     }
 
 };
@@ -42,13 +48,11 @@ class Peigon :public Bird{
 };
 
 int main () {
+    Bird bd;
+    bd.eat();
     Sparrow s(1 ,2,4,"brown");
-    s.age;
-    s.eat();
-    s.grassing();
-    // s.age;
     // s.eat();
-    // s.grassing();  in private mode it cant be inherited 
+    s.grassing();
 
     Peigon p;
     p.eat();

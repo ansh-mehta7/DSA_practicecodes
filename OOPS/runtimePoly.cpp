@@ -48,7 +48,7 @@ void sound() override
 
 void sound (Animal *animal){
 
-    animal->sound();
+    animal->sound();   // LATE BINDING 
     // polymorphic aniamal-<sound is behaving as per
     // required object allocated at runtime 
 }
@@ -64,6 +64,7 @@ int main () {
     // animal =new Parrot();
     // sound(animal);
     delete animal;
-
+  
 return 0;
   }
+  // effort is getting reduced 
